@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/utils/constants.dart';
 import 'package:pokedex/services/pokemon.dart';
 import 'about_screen.dart';
 
@@ -27,10 +26,10 @@ class _PokedexScreenState extends State<PokedexScreen> {
   void updateUI(dynamic pokemonData) {
     setState(() {
       if (pokemonData == null) {
-        String entry = '0';
-        // pokemonIcon = 'Error';
-        // pokemonMessage = 'Unable to get pokemon data';
-        String name = 'none';
+        // String entry = '0';
+        // // pokemonIcon = 'Error';
+        // // pokemonMessage = 'Unable to get pokemon data';
+        // String name = 'none';
         return;
       }
       entry = pokemonData['data'][1]['entry'];
@@ -42,44 +41,22 @@ class _PokedexScreenState extends State<PokedexScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/location_background.jpg'),
-            fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(
-                Colors.white.withOpacity(0.8), BlendMode.dstATop),
+        child: TextButton(
+          child: Text(
+            '$name' + '  dex: $entry',
           ),
-        ),
-        constraints: BoxConstraints.expand(),
-        child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  FlatButton(
-                    onPressed: () async {
-                      var pokemonData = await pokemon.getPokemon();
-                      updateUI(pokemonData);
-                    },
- 
-                  ),
-                ],
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return AboutScreen();
+                },
               ),
-              Padding(
-                padding: EdgeInsets.only(left: 15.0),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      '$name'+'  dex: $entry',
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            );
+            var pokemonData = await pokemon.getPokemon();
+            updateUI(pokemonData);
+          },
         ),
       ),
     );
