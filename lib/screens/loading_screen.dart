@@ -29,9 +29,16 @@ class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: CircularProgressIndicator(
-          backgroundColor: Colors.white,
+        child: SizedBox(
+          child: CircularProgressIndicator(
+            backgroundColor: Colors.white,
+            strokeWidth: 10,
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+          ),
+          height: 200.0,
+          width: 200.0,
         ),
       ),
     );

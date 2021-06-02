@@ -32,8 +32,8 @@ class _PokedexScreenState extends State<PokedexScreen> {
         // String name = 'none';
         return;
       }
-      entry = pokemonData['data'][1]['entry'];
-      name = pokemonData['data'][1]['name'];
+      entry = pokemonData['data'][149]['entry'];
+      name = pokemonData['data'][149]['name'];
     });
   }
 
