@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/services/pokemon.dart';
 import 'about_screen.dart';
+import 'package:pokedex/utils/widgets.dart';
 
 class PokedexScreen extends StatefulWidget {
   PokedexScreen({this.pokemonList});
@@ -41,24 +42,30 @@ class _PokedexScreenState extends State<PokedexScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: TextButton(
-          child: Text(
-            '$name' + '  dex: $entry',
-          ),
-          onPressed: () async {
-            await Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return AboutScreen();
-                },
+          child: ListView(
+        padding: const EdgeInsets.all(8),
+        children: <Widget>[
+          Container(
+            child: TextButton(
+              child: Text(
+                '$name' + '  dex: $entry',
               ),
-            );
-            var pokemonData = await pokemon.getPokemon();
-            updateUI(pokemonData);
-          },
-        ),
-      ),
+              onPressed: () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return AboutScreen();
+                    },
+                  ),
+                );
+                var pokemonData = await pokemon.getPokemon();
+                updateUI(pokemonData);
+              },
+            ),
+          ),
+        ],
+      )),
     );
   }
 }
