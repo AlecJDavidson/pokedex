@@ -16,12 +16,7 @@ class PokedexScreen extends StatelessWidget {
         children: <Widget>[
 			PokemonObject(pokemonList: pokemonList),
 			PokemonObject(pokemonList: pokemonList),
-			PokemonObject(pokemonList: pokemonList),
-			PokemonObject(pokemonList: pokemonList),
-			PokemonObject(pokemonList: pokemonList),
-			PokemonObject(pokemonList: pokemonList),
-			PokemonObject(pokemonList: pokemonList),
-			PokemonObject(pokemonList: pokemonList),
+
         ],
       )),
     );
