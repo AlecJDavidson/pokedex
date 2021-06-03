@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'pokedex_screen.dart';
+import 'package:pokedex/screens/pokedex_screen.dart';
 import 'package:pokedex/services/pokemon.dart';
+import 'package:pokedex/utils/widgets.dart';
+
+import 'pokedex_screen.dart';
+import 'pokedex_screen.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override
@@ -15,6 +19,13 @@ class _LoadingScreenState extends State<LoadingScreen> {
     super.initState();
     getPokemonData();
   }
+
+  // void getPokedexHome() async {
+
+  //   Navigator.push(context, MaterialPageRoute(builder: (context) {
+  //     return PokedexScreen();
+  //   }));
+  // }
 
   void getPokemonData() async {
     var pokemonData = await PokemonModel().getPokemon();

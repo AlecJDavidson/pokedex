@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/services/pokemon.dart';
-import 'loading_screen.dart';
+import 'package:pokedex/screens/loading_screen.dart';
+import 'package:pokedex/utils/widgets.dart';
 
 class AboutScreen extends StatefulWidget {
   AboutScreen({this.pokemonData});
