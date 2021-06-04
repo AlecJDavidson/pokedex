@@ -12,15 +12,17 @@ class PokedexScreen extends StatelessWidget {
       body: Container(
           child: ListView(
         padding: const EdgeInsets.all(8),
-        children: <Widget>[
-          PokemonObject(
-            pokemonList: pokemonList,
-            dexEntry: 0,
-          ),
-          PokemonObject(
-            pokemonList: pokemonList,
-            dexEntry: 1,
-          ),
+        children: [
+          for (int i = 0; i < 150; i++)
+            PokemonObject(
+              pokemonList: pokemonList,
+              dexEntry: i,
+            )
+
+          // PokemonObject(
+          //   pokemonList: pokemonList,
+          //   dexEntry: 1,
+          // ),
         ],
       )),
     );
