@@ -2,73 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/services/pokemon.dart';
 import 'package:pokedex/screens/about_screen.dart';
 
-
 class PokemonObject extends StatefulWidget {
-  PokemonObject({this.pokemonList});
+  PokemonObject({this.pokemonList, this.dexEntry});
   final pokemonList;
-
+  final dexEntry;
 
   @override
   _PokemonObjectState createState() => _PokemonObjectState();
 }
 
 class _PokemonObjectState extends State<PokemonObject> {
+  PokemonModel pokemon = PokemonModel();
 
-    PokemonModel pokemon = PokemonModel();
-
-    int entry;
-    String name;
+  int entry;
+  String name;
 
   @override
-   void initState() {
+  void initState() {
     super.initState();
 
-    updateUI(widget.pokemonList);
-    getPokemonData();
-
+    updateUI(widget.pokemonList, widget.dexEntry);
   }
 
-    void getPokemonData() async {
-    var pokemonData = await PokemonModel().getPokemon();
-
-
-    return pokemonData;
-    }
-  
-    void updateUI(dynamic pokemonData) {
+  void updateUI(dynamic pokemonData, dynamic dexEntry) {
     setState(() {
-      if (pokemonData == null) {
-        // String entry = '0';
-        // String name = 'none';
-        return;
-      }
-   
-      entry = pokemonData['data'][0]['entry'];
-      name = pokemonData['data'][0]['name'];
+      entry = pokemonData['data'][dexEntry]['entry'];
+      name = pokemonData['data'][dexEntry]['name'];
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-            child: TextButton(
-              child: Text(
-                '$name' + '  dex: $entry',
-              ),
-              onPressed: () async {
-                await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return AboutScreen();
-                    },
-                  ),
-                );
-                var pokemonData = await pokemon.getPokemon();
-                updateUI(pokemonData);
+      child: TextButton(
+        child: Text(
+          '$name' + '  dex: $entry',
+        ),
+        onPressed: () async {
+          await Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return AboutScreen();
               },
             ),
-  );
-    
+          );
+        },
+      ),
+    );
   }
 }
