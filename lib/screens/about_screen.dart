@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/screens/loading_screen.dart';
 
 class AboutScreen extends StatefulWidget {
-  AboutScreen();
-
+  AboutScreen({this.dexEntry});
+  final dexEntry;
 
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/utils/pokemonCard.dart';
 
+
 class PokedexScreen extends StatelessWidget {
   const PokedexScreen({this.pokemonList, this.dexEntry});
   final pokemonList;
@@ -11,7 +12,7 @@ class PokedexScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
           child: ListView(
-        padding: const EdgeInsets.all(8),
+    
         children: [
           for (int i = 0; i < 150; i++)
             PokemonObject(
