@@ -5,14 +5,11 @@ class AboutScreen extends StatefulWidget {
   AboutScreen({this.dexEntry});
   final dexEntry;
 
-
   @override
   _AboutScreenState createState() => _AboutScreenState();
 }
 
 class _AboutScreenState extends State<AboutScreen> {
-
-
   @override
   void initState() {
     super.initState();
@@ -20,27 +17,23 @@ class _AboutScreenState extends State<AboutScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
+    return Container(
       child: TextButton(
         child: Icon(
           Icons.arrow_back,
           size: 50.0,
         ),
         onPressed: () async {
-
           await Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) {
                 return LoadingScreen();
               },
-              
             ),
-            
           );
         },
       ),
-    ));
+    );
   }
 }

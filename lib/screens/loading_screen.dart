@@ -4,13 +4,17 @@ import 'package:pokedex/services/pokemon.dart';
 
 
 class LoadingScreen extends StatefulWidget {
+  LoadingScreen({this.nextScreen});
+  final nextScreen;
+
   @override
-  State<StatefulWidget> createState() {
-    return _LoadingScreenState();
-  }
+  _LoadingScreenState createState() => _LoadingScreenState();
 }
 
 class _LoadingScreenState extends State<LoadingScreen> {
+
+  
+
   @override
   void initState() {
     super.initState();

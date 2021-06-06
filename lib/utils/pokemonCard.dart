@@ -14,7 +14,6 @@ class PokemonObject extends StatefulWidget {
 }
 
 class _PokemonObjectState extends State<PokemonObject> {
-  PokemonModel pokemon = PokemonModel();
 
   int entry;
   String name;
