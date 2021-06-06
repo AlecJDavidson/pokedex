@@ -12,7 +12,7 @@ class PokedexScreen extends StatelessWidget {
       body: Container(
           child: ListView(
         children: [
-          for (int i = 0; i < 150; i++)
+          for (int i = 0; i < 700; i++)
             PokemonObject(
               pokemonData: data,
               dexEntry: i,

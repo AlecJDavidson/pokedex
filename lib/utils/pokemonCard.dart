@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/screens/about_screen.dart';
 import 'package:pokedex/screens/loading_screen.dart';
 import 'functions.dart';
 
