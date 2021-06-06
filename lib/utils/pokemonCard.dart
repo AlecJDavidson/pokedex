@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/screens/about_screen.dart';
+import 'package:pokedex/screens/loading_screen.dart';
 import 'functions.dart';
 
 class PokemonObject extends StatefulWidget {
-  PokemonObject({this.pokemonList, this.dexEntry});
-  final pokemonList;
+  PokemonObject({this.pokemonData, this.dexEntry});
+  final pokemonData;
   final dexEntry;
 
   @override
@@ -23,7 +24,7 @@ class _PokemonObjectState extends State<PokemonObject> {
   void initState() {
     super.initState();
 
-    updateUI(widget.pokemonList, widget.dexEntry);
+    updateUI(widget.pokemonData, widget.dexEntry);
   }
 
   void updateUI(dynamic pokemonData, dynamic dexEntry) {
@@ -65,7 +66,7 @@ class _PokemonObjectState extends State<PokemonObject> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return AboutScreen(dexEntry: entry);
+                      return LoadingScreen('about');
                     },
                   ),
                 );

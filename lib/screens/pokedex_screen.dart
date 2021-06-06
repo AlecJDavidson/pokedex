@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/utils/pokemonCard.dart';
 
 class PokedexScreen extends StatelessWidget {
-  const PokedexScreen({this.pokemonList, this.dexEntry});
-  final pokemonList;
+  const PokedexScreen({this.data, this.dexEntry});
+  final data;
   final dexEntry;
 
   @override
@@ -14,7 +14,7 @@ class PokedexScreen extends StatelessWidget {
         children: [
           for (int i = 0; i < 150; i++)
             PokemonObject(
-              pokemonList: pokemonList,
+              pokemonData: data,
               dexEntry: i,
             )
         ],
