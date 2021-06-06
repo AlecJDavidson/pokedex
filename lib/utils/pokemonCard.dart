@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/services/pokemon.dart';
 import 'package:pokedex/screens/about_screen.dart';
-import 'package:pokedex/styles.dart';
 import 'functions.dart';
 
 class PokemonObject extends StatefulWidget {
