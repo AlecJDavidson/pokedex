@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:pokedex/styles.dart';
 import 'package:pokedex/utils/pokemonCard.dart';
 
 class PokedexScreen extends StatelessWidget {
@@ -8,17 +10,30 @@ class PokedexScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-          child: ListView(
-        children: [
-          for (int i = 0; i < 700; i++)
-            PokemonObject(
-              pokemonData: data,
-              dexEntry: i,
-            )
-        ],
-      )),
+    int max = 150;
+    return ListView(
+      children: [
+        Column(
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Column(children: [
+                for (int i = 0; i < max; i += 2)
+                  PokemonObject(
+                    pokemonData: data,
+                    dexEntry: i,
+                  ),
+              ]),
+              Column(children: [
+                for (int j = 1; j < max; j += 2)
+                  PokemonObject(
+                    pokemonData: data,
+                    dexEntry: j,
+                  ),
+              ]),
+            ]),
+          ],
+        ),
+      ],
     );
   }
 }

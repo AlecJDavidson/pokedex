@@ -50,8 +50,8 @@ class _LoadingScreenState extends State<LoadingScreen> {
             strokeWidth: 10,
             valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
           ),
-          height: 200.0,
-          width: 200.0,
+          height: 100.0,
+          width: 100.0,
         ),
       ),
     );
