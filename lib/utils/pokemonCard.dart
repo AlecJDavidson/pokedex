@@ -45,41 +45,46 @@ class _PokemonObjectState extends State<PokemonObject> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: (getColor(type1)).withAlpha(100),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
-      child: TextButton(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            // Text('#'+('$entry'.padLeft(3,'0'))),
-            Image.asset(sprite),
+    return Container(
+      height: 100,
+      width: 225,
+      child: Card(
+        color: (getColor(type1)).withAlpha(100),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+        child: TextButton(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              // Text('#'+('$entry'.padLeft(3,'0'))),
+              Image.asset(sprite),
 
-            Column(
-              children: <Widget>[
-                Text('$name'),
-                Card(
-                  color: getColorAccent(type1),
-                  child: Text('$type1'),
-                ),
-                Card(
-                  color: getColorAccent(type2),
-                  child: Text('$type2'),
-                )
-              ],
-            ),
-          ],
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('$name'),
+                  Card(
+                    color: getColorAccent(type1),
+                    child: Text('$type1'),
+                  ),
+                  Card(
+                    color: getColorAccent(type2),
+                    child: Text('$type2'),
+                  )
+                ],
+              ),
+            ],
+          ),
+          onPressed: () async {
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return LoadingScreen('about');
+                },
+              ),
+            );
+          },
         ),
-        onPressed: () async {
-          await Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return LoadingScreen('about');
-              },
-            ),
-          );
-        },
       ),
     );
   }
