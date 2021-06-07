@@ -11,29 +11,32 @@ class PokedexScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int max = 150;
-    return ListView(
-      children: [
-        Column(
-          children: [
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Column(children: [
-                for (int i = 0; i < max; i += 2)
-                  PokemonObject(
-                    pokemonData: data,
-                    dexEntry: i,
-                  ),
+    return Container(
+      color: primary,
+      child: ListView(
+        children: [
+          Column(
+            children: [
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Column(children: [
+                  for (int i = 0; i < max; i += 2)
+                    PokemonObject(
+                      pokemonData: data,
+                      dexEntry: i,
+                    ),
+                ]),
+                Column(children: [
+                  for (int j = 1; j < max; j += 2)
+                    PokemonObject(
+                      pokemonData: data,
+                      dexEntry: j,
+                    ),
+                ]),
               ]),
-              Column(children: [
-                for (int j = 1; j < max; j += 2)
-                  PokemonObject(
-                    pokemonData: data,
-                    dexEntry: j,
-                  ),
-              ]),
-            ]),
-          ],
-        ),
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
