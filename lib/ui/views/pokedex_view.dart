@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:pokedex/theme/styles.dart';
-import 'package:pokedex/components/pokemonCard.dart';
+import 'package:pokedex/components/pokedex_entry.dart';
 
 class PokedexView extends StatelessWidget {
   const PokedexView({this.data, this.dexEntry});
@@ -17,7 +17,7 @@ class PokedexView extends StatelessWidget {
         children: [
           for (int i = 0; i < max; i++)
             Center(
-              child: PokemonObject(
+              child: PokedexEntry(
                 pokemonData: data,
                 dexEntry: i,
               ),
@@ -46,7 +46,7 @@ class PokedexView extends StatelessWidget {
 //           child: ListView(
 //         children: [
 //           for (int i = 0; i < 150; i++)
-//             PokemonObject(
+//             PokedexEntry(
 //               pokemonList: pokemonList,
 //               dexEntry: i,
 //             )

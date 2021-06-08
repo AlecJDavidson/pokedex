@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:pokedex/ui/views/loading_view.dart';
 import 'package:pokedex/utils/ui_utils.dart';
 
-class PokemonObject extends StatefulWidget {
-  PokemonObject({this.pokemonData, this.dexEntry});
+class PokedexEntry extends StatefulWidget {
+  PokedexEntry({this.pokemonData, this.dexEntry});
   final pokemonData;
   final dexEntry;
 
   @override
-  _PokemonObjectState createState() => _PokemonObjectState();
+  _PokedexEntryState createState() => _PokedexEntryState();
 }
 
-class _PokemonObjectState extends State<PokemonObject> {
+class _PokedexEntryState extends State<PokedexEntry> {
   int entry;
   String name;
   String type1;
