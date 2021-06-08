@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/screens/about_screen.dart';
-import 'package:pokedex/screens/pokedex_screen.dart';
+import 'package:pokedex/ui/views/detail_view.dart';
+import 'package:pokedex/ui/views/pokedex_view.dart';
 import 'package:pokedex/services/pokemon.dart';
 
-class LoadingScreen extends StatefulWidget {
-  LoadingScreen(this.screen);
-  final screen;
+class LoadingView extends StatefulWidget {
+  LoadingView(this.view);
+  final view;
 
   @override
-  _LoadingScreenState createState() => _LoadingScreenState();
+  _LoadingViewState createState() => _LoadingViewState();
 }
 
-class _LoadingScreenState extends State<LoadingScreen> {
-  String screen;
+class _LoadingViewState extends State<LoadingView> {
+  String view;
 
   @override
   void initState() {
     super.initState();
 
-    getPokemonData(widget.screen);
+    getPokemonData(widget.view);
   }
 
-  void getPokemonData(dynamic screen) async {
+  void getPokemonData(dynamic view) async {
     var pokemonData = await GetPokemon()
-        .getPokemon(); // Gets that data that will need to be passed to any screen that is loaded
+        .getPokemon(); // Gets that data that will need to be passed to any view that is loaded
     Navigator.push(context, MaterialPageRoute(builder: (context) {
-      if (screen == 'pokedex') {
-        return PokedexScreen(
+      if (view == 'pokedex') {
+        return PokedexView(
           data: pokemonData,
         );
-      } else if (screen == 'about') {
-        return AboutScreen(pokemonData: pokemonData);
+      } else if (view == 'about') {
+        return DetailView(pokemonData: pokemonData);
       } else {
-        return PokedexScreen(
+        return PokedexView(
           data: pokemonData,
         );
       }

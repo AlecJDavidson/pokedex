@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/screens/loading_screen.dart';
-import 'functions.dart';
+import 'package:pokedex/ui/views/loading_view.dart';
+import 'package:pokedex/utils/ui_utils.dart';
 
 class PokemonObject extends StatefulWidget {
   PokemonObject({this.pokemonData, this.dexEntry});
@@ -79,7 +79,7 @@ class _PokemonObjectState extends State<PokemonObject> {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return LoadingScreen('about');
+                return LoadingView('about');
               },
             ),
           );

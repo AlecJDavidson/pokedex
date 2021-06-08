@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/screens/loading_screen.dart';
+import 'package:pokedex/ui/views/loading_view.dart';
 
-class AboutScreen extends StatefulWidget {
-  AboutScreen({this.pokemonData});
+class DetailView extends StatefulWidget {
+  DetailView({this.pokemonData});
   final pokemonData;
 
   @override
-  _AboutScreenState createState() => _AboutScreenState();
+  _DetailViewState createState() => _DetailViewState();
 }
 
-class _AboutScreenState extends State<AboutScreen> {
+class _DetailViewState extends State<DetailView> {
   @override
   void initState() {
     super.initState();
@@ -35,7 +35,7 @@ class _AboutScreenState extends State<AboutScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return LoadingScreen('pokedex');
+                          return LoadingView('pokedex');
                         },
                       ),
                     );

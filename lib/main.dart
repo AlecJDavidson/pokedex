@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/screens/loading_screen.dart';
+import 'package:pokedex/ui/views/loading_view.dart';
+import 'package:pokedex/ui/views/pokedex_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: LoadingScreen('pokedex'),
+      home: LoadingView('pokedex'),
     );
   }
 }
