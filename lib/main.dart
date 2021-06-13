@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/views/pokedex_view.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

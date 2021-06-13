@@ -57,9 +57,11 @@ class DetailView extends StatelessWidget {
                 child: Row(
                   children: [
                     Card(
+                      color: getColor(pokemonData.type1),
                       child: Text(pokemonData.type1),
                     ),
                     Card(
+                      color: getColor(pokemonData.type2),
                       child: Text(pokemonData.type2),
                     ),
                     Spacer(),
