@@ -27,7 +27,7 @@ class _PokedexViewState extends State<PokedexView> {
                 if (snapshot.hasData) {
                   return PokedexCard(pokemonData: snapshot.data);
                 } else if (snapshot.hasError) {
-                  return Text("${snapshot.error}");
+                  return Text("MissingNo.");
                 }
 
                 // By default, show a loading spinner.
